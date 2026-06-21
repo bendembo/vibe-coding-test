@@ -20,6 +20,11 @@
       margin-bottom: 1.5rem;
     }
 
+    .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
     button {
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
@@ -34,6 +39,14 @@
       background: #1d4ed8;
     }
 
+    #bye-btn {
+      background: #dc2626;
+    }
+
+    #bye-btn:hover {
+      background: #b91c1c;
+    }
+
     #message {
       margin-top: 1rem;
       font-size: 1.25rem;
@@ -43,12 +56,18 @@
 </head>
 <body>
   <h1>Hallo Benjamin</h1>
-  <button type="button" id="greet-btn">Klick mich</button>
+  <div class="buttons">
+    <button type="button" id="greet-btn">Klick mich</button>
+    <button type="button" id="bye-btn">Tschüss sagen</button>
+  </div>
   <p id="message" aria-live="polite"></p>
 
   <script>
     document.getElementById('greet-btn').addEventListener('click', () => {
       document.getElementById('message').textContent = 'Hallo zurück!';
+    });
+    document.getElementById('bye-btn').addEventListener('click', () => {
+      document.getElementById('message').textContent = 'Tschüss Benjamin';
     });
   </script>
 </body>
