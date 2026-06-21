@@ -33,10 +33,23 @@
     button:hover {
       background: #1d4ed8;
     }
+
+    #message {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #1e293b;
+    }
   </style>
 </head>
 <body>
   <h1>Hallo Benjamin</h1>
-  <button type="button">Klick mich</button>
+  <button type="button" id="greet-btn">Klick mich</button>
+  <p id="message" aria-live="polite"></p>
+
+  <script>
+    document.getElementById('greet-btn').addEventListener('click', () => {
+      document.getElementById('message').textContent = 'Hallo zurück!';
+    });
+  </script>
 </body>
 </html>
